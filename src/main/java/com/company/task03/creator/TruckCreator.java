@@ -5,10 +5,7 @@ import com.company.task03.entity.Truck;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Queue;
-import java.util.Random;
+import java.util.*;
 
 public class TruckCreator {
 
@@ -36,11 +33,11 @@ public class TruckCreator {
         this.truckQuantity = baseData.getTrucksQuantity();
     }
 
-    public Deque<Truck> createTrucks() {
-        Deque<Truck> truckQueue = new ArrayDeque<>();
+    public List<Truck> createTrucks() {
+        List<Truck> truckQueue = new ArrayList<>();
         for (int i = 0; i < truckQuantity; i++) {
             Truck truck = createTruck();
-            truckQueue.addLast(truck);
+            truckQueue.add(truck);
         }
         LOGGER.info(truckQuantity + " trucks created");
         return truckQueue;
